@@ -73,8 +73,47 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public Result<?> deleteById(@PathVariable Long id)
+
     {
         userMapper.deleteById(id);
         return Result.success();
+    }
+
+    /**
+     * 登录接口
+     *
+     */
+
+    @PostMapping("/login")
+    public Result<?> login(@RequestBody User user){
+        User userOne = userMapper.selectOne(new LambdaQueryWrapper<User>().eq(User::getUsername, user.getUsername()).
+                eq(User::getPassword, user.getPassword()));
+        if(userOne==null){
+            return Result.error("-1","用户名和密码不存在");
+        }
+        return Result.success();
+
+    }
+    /**
+     * 注册接口
+     */
+
+    @PostMapping("/register")
+    public Result<?> register(@RequestBody User user){
+        User userAlredy = userMapper.selectOne(new LambdaQueryWrapper<User>().eq(User::getUsername, user.getUsername()).eq(User::getPassword, user.getPassword()));
+        if(userAlredy!=null)
+
+        {
+           return Result.error("-1","用户已经存在");
+        }
+        if(user.getPassword()==null)
+        {
+            user.setPassword("123456");
+        }
+
+        userMapper.insert(user);
+
+        return Result.success();
+
     }
 }
