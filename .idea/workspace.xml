@@ -4,9 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f472fec-30ac-425c-9e16-96ea61c9066f" name="Changes" comment="后端增删改查接口编写完成">
+    <list default="true" id="9f472fec-30ac-425c-9e16-96ea61c9066f" name="Changes" comment="后端完成注册和登录的接口编写">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/controller/InputwarehouseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/controller/MaterialController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/controller/OutwarehouseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/entity/Backwarehouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/entity/Inputwarehouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/entity/Material.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/entity/Outwarehouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/mapper/CustomerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/mapper/InputwarehouseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/mapper/MaterialMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/mapper/OutwarehouseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/service/InputwarehouseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chen/service/OutwarehouseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chen/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chen/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,13 +34,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.4.1/mybatis-plus-core-3.4.1.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.46/tomcat-embed-core-9.0.46.jar!/org/apache/tomcat/util/net/NioBlockingSelector.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -35,30 +57,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/JavaDemo/springboot/src/main/java/com/chen/common",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "d164d99c46d45be6b1e7585ff7ea10e7",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaDemo/graduation-project-master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d164d99c46d45be6b1e7585ff7ea10e7&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JavaDemo\springboot\src\main\java\com\chen\common" />
@@ -93,7 +116,18 @@
       <option name="presentableId" value="Default" />
       <updated>1701392204563</updated>
       <workItem from="1701392205783" duration="2902000" />
-      <workItem from="1701395304080" duration="9734000" />
+      <workItem from="1701395304080" duration="11931000" />
+      <workItem from="1701487432599" duration="1808000" />
+      <workItem from="1701567456654" duration="4738000" />
+      <workItem from="1701669501479" duration="6744000" />
+      <workItem from="1701767044854" duration="58000" />
+      <workItem from="1701767114744" duration="1138000" />
+      <workItem from="1701853106785" duration="236000" />
+      <workItem from="1701914989567" duration="12000" />
+      <workItem from="1701951072046" duration="1390000" />
+      <workItem from="1701998739250" duration="15000" />
+      <workItem from="1702189236893" duration="8627000" />
+      <workItem from="1702454978318" duration="1524000" />
     </task>
     <task id="LOCAL-00001" summary="前后端联调测试成功">
       <created>1701395098860</created>
@@ -109,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701419385355</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="后端完成注册和登录的接口编写">
+      <created>1701435862846</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701435862846</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +171,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="前后端联调测试成功" />
     <MESSAGE value="后端增删改查接口编写完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="后端增删改查接口编写完成" />
+    <MESSAGE value="后端完成注册和登录的接口编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="后端完成注册和登录的接口编写" />
   </component>
 </project>

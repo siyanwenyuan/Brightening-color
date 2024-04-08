@@ -113,7 +113,20 @@ public class UserController {
 
         userMapper.insert(user);
 
+
         return Result.success();
+
+    }
+
+    /**
+     * 更新个人信息
+     */
+
+    @PutMapping("/person/update/{id}")
+    public Result<?> personUpdate(@PathVariable Long id,@RequestBody User user){
+
+     userMapper.update(user,new LambdaQueryWrapper<User>().eq(User::getId,id));
+    return Result.success();
 
     }
 }
